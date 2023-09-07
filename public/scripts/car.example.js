@@ -41,12 +41,41 @@ class Car {
 
   render() {
     return `
-      <p>id: <b>${this.id}</b></p>
-      <p>plate: <b>${this.plate}</b></p>
-      <p>manufacture: <b>${this.manufacture}</b></p>
-      <p>model: <b>${this.model}</b></p>
-      <p>available at: <b>${this.availableAt}</b></p>
-      <img src="${this.image}" alt="${this.manufacture}" width="64px">
+    <div class="card-cars px-2 py-4">
+    <img src="${this.image}" class="card-img-top mt-4">
+    <div class="card-body">
+        <h5 class="card-title fs-6">${this.manufacture}/${this.model}</h5>
+        <h5 class="card-title fs-5 fw-bold">Rp ${this.rentPerDay} / hari</h5>
+        <p class="cars__p">${this.description}</p>
+        <div class="row">
+            <div class="col-1">
+                <i data-feather="users" class="icon-input"></i>
+            </div>
+            <div class="col-10 ms-lg-2">
+                ${this.capacity} orang
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-1">
+                <i data-feather="settings" class="icon-input"></i>
+            </div>
+            <div class="col-10 ms-lg-2">
+                ${this.transmission}
+            </div>
+        </div>
+        <div class="row mt-2 mb-4">
+            <div class="col-1">
+                <i data-feather="calendar" class="icon-input"></i>
+            </div>
+            <div class="col-10 ms-lg-2">
+                Tahun ${this.year}
+            </div>
+        </div>
+            <div class="card-footer">
+                <a href="#" class="btn btn-hijau-card" style="width:100%">Go somewhere</a>
+            </div>
+        </div>
+    </div>
     `;
   }
 }
